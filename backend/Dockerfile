@@ -5,7 +5,7 @@ FROM node:18
 WORKDIR /app
 
 # package.json ve pnpm-lock.yaml dosyalarını kopyala
-COPY backend/package.json backend/pnpm-lock.yaml ./
+COPY package.json pnpm-lock.yaml ./
 
 # pnpm'i global olarak yükle
 RUN npm install -g pnpm
@@ -15,7 +15,7 @@ RUN pnpm install
 
 # Uygulama dosyalarını kopyala
 # Sadece src klasöründeki dosyaları kopyala
-COPY backend/src . 
+COPY src . 
 
 # TypeScript dosyalarını derlemek için 'pnpm build' komutunu çalıştır
 RUN pnpm build
