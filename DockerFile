@@ -1,0 +1,23 @@
+# Node.js tabanlı bir imaj kullan
+FROM node:18
+
+# Çalışma dizinini ayarla
+WORKDIR /app
+
+# package.json ve pnpm-lock.yaml dosyalarını kopyala
+COPY package.json pnpm-lock.yaml ./
+
+# pnpm'i yükle
+RUN npm install -g pnpm
+
+# Bağımlılıkları yükle
+RUN pnpm install
+
+# Uygulama dosyalarını kopyala
+COPY . .
+
+# TypeScript dosyalarını derle
+RUN pnpm build
+
+# Uygulamayı başlat
+CMD ["node", "dist/main.js"]
