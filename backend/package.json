@@ -2,9 +2,11 @@
   "name": "backend",
   "version": "1.0.0",
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/main.js",
+    "clean": "rm -rf dist",
+    "build": "pnpm run clean && tsc",
+    "start": "node dist/main",
     "start:dev": "nest start --watch",
+    "build:watch": "tsc --watch",
     "test": "jest"
   },
   "dependencies": {

@@ -1,9 +1,9 @@
 import { Controller, Get } from '@nestjs/common';
 
-@Controller('app')
+@Controller('apps')
 export class AppController {
   @Get()  // ✅ Parantezler olmalı!
   getHello(): string {
-    return 'Hello World!';
+    return 'Hello Worldss!';
   }
 }

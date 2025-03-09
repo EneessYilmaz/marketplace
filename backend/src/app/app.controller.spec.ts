@@ -25,6 +25,6 @@ describe('AppController', () => {
     return request(app.getHttpServer())
       .get('/app')
       .expect(200)
-      .expect('Hello World!');
+      .expect('Hello Worlds!');
   });
 });
